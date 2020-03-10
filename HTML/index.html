@@ -49,7 +49,7 @@
                     <h2>Orçamento</h2>
 
                     <p>Qual o valor da conta de energia do seu estabelecimento comercial? </p>
-                    <input type="number" id="conta" placeholder="ex:R$ 500.00">
+                    <input type="number" id="conta" placeholder="ex:R$ 500.00" onkeyup="Calcular()">
                     <button onclick="Calcular()">Ver Orçamento</button>
                     <div id="re"></div>
                 </div>
@@ -109,11 +109,11 @@
 <script>
     //simulador
     function Calcular() {
-        var luz = conta.value
-        var economia = luz * 0.2;
+        var luz = conta.value * 0.4;
+        var economia = luz * 0.34;
         var resultado = conta.value - economia;
-        re.innerHTML = `Atualmente você gasta com a sua conta de energia <b> R$ ${luz} </b> 
-            com o nosso projeto terá uma economia de <b> R$ ${(economia.toFixed(2))}</b>
+        re.innerHTML = `Com o nosso projeto terá uma economia de <b> R$ ${(economia.toFixed(2))}</b>
+            Seu investimento será de <b> R$ 30.000,00 </b>
             <p>Sendo assim o valor da sua conta será <b> R$ ${(resultado.toFixed(2))}</b></p>`;
     }
 
